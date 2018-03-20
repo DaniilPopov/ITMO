@@ -4,5 +4,6 @@ public class NewProject {
         System.out.println("Hello word");
         int a = 2;
         System.out.println(a);
+        String s = "sada";
     }
 }
