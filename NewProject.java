@@ -5,5 +5,6 @@ public class NewProject {
         int a = 2;
         System.out.println(a);
         String s = "sada";
+        int b = 3;
     }
 }
