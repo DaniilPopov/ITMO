@@ -124,8 +124,7 @@ public class NewProject {
 
         }
         System.out.println("В одном рулоне " + sum + " счастливых билетов");
-
-
+        
     }
 }
 
