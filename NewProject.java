@@ -125,10 +125,6 @@ public class NewProject {
         }
         System.out.println("В одном рулоне " + sum + " счастливых билетов");
 
-        //Задание 7.
-        System.out.println("Задание 7.");
-
-
     }
 }
 
