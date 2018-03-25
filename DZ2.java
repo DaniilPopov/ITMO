@@ -149,6 +149,7 @@ public class DZ2 {
         //Задание 8
         System.out.println("Задание 8");
 
+
         //Строки
         //Задание 1
         System.out.println("Задание 1");
