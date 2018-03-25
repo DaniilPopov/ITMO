@@ -169,6 +169,7 @@ public class DZ2 {
         //Задание 2
         System.out.println("Задание 2");
 
+
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Введите строку: ");
