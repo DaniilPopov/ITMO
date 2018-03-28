@@ -140,15 +140,53 @@ public class DZ2 {
             }
         }
 
-        //Задание 6
-        System.out.println("Задание 6");
-
         //Задание 7
         System.out.println("Задание 7");
+
+
+        int[][] mas8 = new int[5][8];
+        for (int i = 0; i < mas8.length; i++) {
+            for (int j = 0; j < mas8[i].length; j++) {
+                mas8[i][j] = (int) (Math.round(Math.random() * 199) - 99);
+                System.out.print(mas8[i][j] + " ");
+            }
+
+        }
+        int max = mas8[0][0];
+        for (int i = 0; i < mas8.length; i++) {
+            for (int j = 0; j < mas8[i].length; j++) {
+                if (mas8[i][j] > max) max = mas8[i][j];
+            }
+        }
+        System.out.println();
+        System.out.println("Максимальное значение: " + max);
 
         //Задание 8
         System.out.println("Задание 8");
 
+        int[][] mas9 = new int[15][3];
+        for (int i = 0; i < mas9.length; i++) {
+            for (int j = 0; j < mas9[i].length; j++) {
+                mas9[i][j] = (int) (Math.random() * 8) + 2;
+                if (j == mas9[i].length - 1) {
+                    mas9[i][j] = mas9[i][j - 2] * mas9[i][j - 1];
+                    for (int k = 0; k < i; k++) {
+                        if (mas9[i][j] == mas9[k][j] && i > 0) {
+                            if (mas9[i][j - 1] == mas9[k][j - 1] || mas9[i][j - 2] == mas9[k][j - 2])
+                                --i;
+                        }
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < mas9.length; i++) {
+            System.out.print("Пример №" + (i + 1 + " Умножить "));
+            for (int j = 0; j < mas9[i].length; j++) {
+                if (j == 0) System.out.print(mas9[i][j] + " на ");
+                if (j == 1) System.out.println(mas9[i][j]);
+
+            }
+        }
 
         //Строки
         //Задание 1
