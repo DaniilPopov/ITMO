@@ -8,7 +8,8 @@ public class Triangle {
     }
 
     public double Plochad(double a, double b, double c) {
-        S = (a + b + c) / 2.0;
+        double s = (a + b + c) / 2.0;
+        S = Math.sqrt(s * (s - a) * (s - b) * (s - c));
         System.out.println("Площадь треугольника = " + S);
         return S;
     }
