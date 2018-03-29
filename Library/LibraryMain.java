@@ -11,7 +11,7 @@ public class LibraryMain {
         library.get(books, 5);
         library.put(books1, 30);
         library.get(books1, 40);
-        library.put(books2, 40);
+        library.put(books2, 60);
         library.get(books2, 1);
     }
 }

@@ -18,7 +18,7 @@ public class Library {
             a += quantity;
             book.kolvo += quantity;
             System.out.println("Данная кника в количестве  " + book.kolvo + " штук");
-        } else System.out.println("Места нет");
+        } else System.out.println("Места в библиотеке нет");
     }
 
 }
