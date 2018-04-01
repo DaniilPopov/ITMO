@@ -19,6 +19,7 @@ public class Acumm {
         Acumm acc3 = new Acumm(new Umn(), 10);
         System.out.println(acc3.getValue());
         acc3.accum(9);
+
     }
 
     protected void accum(int someInt) {
