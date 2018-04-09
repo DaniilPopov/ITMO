@@ -1,23 +1,27 @@
 package DZ040418;
 
-public class MainHandler {
-    public static MainHandler getIntance(Handler handler) {
-        switch (handler) {
-            case Xml:
-                return new XmlHandler();
-            case Json:
-                return new JsonHandler();
-            case Txt:
-                return new TxtHandler();
+import java.io.BufferedReader;
 
-            default:
-                return null;
-        }
-    }
-
-    public static void main(String[] args) {
-
-    }
-
-    enum Handler {Xml, Json, Txt}
+public class MainHandler implements mainInterface {
+   public abstract static class Handler{
+   protected String file;
+   protected Handler(String file){
+       this.file = file;
+   }
+   public static Handler getInstace(String file) {
+    if (file.endsWith(".json")) return JsonHandler(String file);
+    else retutn XmlHandler(String file);
+   }
+       
+   public static void main(String[] args) {
+    
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
+    String file = reader.readLine();
+    
+    MainHandler mh;
+    mh = MainHandler.Hendler(String file);
+       
+    mh.read(String file);
+    mh.write(String file);
+   }
 }
