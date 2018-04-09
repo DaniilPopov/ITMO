@@ -9,5 +9,4 @@ public class JsonHandler implements mainInterface {
   @Override
   public void write(String path){
   }
-
 }
