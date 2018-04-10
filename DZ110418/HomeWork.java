@@ -37,5 +37,6 @@ public class HomeWork {
         for (String str1 : list2) {
             System.out.println(str1);
         }
+
     }
 }
