@@ -10,3 +10,4 @@ public class JsonHandler implements mainInterface {
   public void write(String path){
   }
 }
+
