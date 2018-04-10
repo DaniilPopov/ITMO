@@ -43,7 +43,6 @@ public class Collection {
                 }
             }
 
-
         }
         System.out.println("Слово War встречается в книге: " + count + " раз" + " а слово peace: " + count1 + " раз");
         System.out.println("В файле wp.txt слова содержащие 3 буквы: " + count2);
