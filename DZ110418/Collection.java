@@ -44,6 +44,41 @@ public class Collection {
             }
 
         }
+        final int length = (int) newFile.length();
+        if (length != 0){
+            char[] c = new char[length];
+
+            InputStreamReader isr = new InputStreamReader(new FileInputStream(newFile),"CP1251");
+
+            final int read = isr.read(c);
+            String str = new String(c, 0, read);
+            str=str.trim();
+            str = str.toLowerCase().replaceAll("\\W", " ");
+            HashMap<String, Integer> map = new HashMap<>();
+            for(String s: str.split(" ")) {
+                if (map.containsKey(s)) {
+                    map.put(s, map.get(s) + 1);
+                } else {
+                    map.put(s, 1);
+                }
+            }
+                map.remove("");
+
+            List list1 = new ArrayList(map.entrySet());
+            Collections.sort(list1, new Comparator<Map.Entry<String, Integer>>() {
+
+                @Override
+                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                    return o1.getValue() - o2.getValue();
+                }
+            });
+            System.out.println("Топ 10 самых частых слов");
+            for (int i = list1.size()- 1; i > list1.size() -11 ; i--) {
+                System.out.println(list1.get(i));
+
+            }
+
+        }
         System.out.println("Слово War встречается в книге: " + count + " раз" + " а слово peace: " + count1 + " раз");
         System.out.println("В файле wp.txt слова содержащие 3 буквы: " + count2);
         System.out.println("В файле wp.txt слова содержащие 2 буквы: " + count3);
