@@ -2,44 +2,47 @@ package DZ160418;
 
 public class LinkedList<T> {
 
-    private Node<T> firstN;
-    private Node<T> lastN;
-    private int size;
+    private int size = 0;
+    private Node firstElem = null;
+    private Node lastElem = null;
 
-    public LinkedList() {
-        this.firstN = new Node<>(null, null, lastN);
-        this.lastN = new Node<>(null, firstN, null);
-    }
-
-    public void firstadd(T value) {
-        Node<T> first = firstN;
-        first.setValue(value);
-        firstN = new Node<>(null, null, first);
-        first.setPrev(firstN);
-        size++;
-    }
-
-    public void lastadd(T value) {
-        Node<T> last = lastN;
-        last.setValue(value);
-        lastN = new Node<>(null, last, null);
-        last.setNext(lastN);
-        size++;
+    public void add(T element) {
+        new Node(element);
     }
 
     public int size() {
         return size;
     }
 
-// public T get(int index){
-// Node<T> indexelem = firstN.getNext();
-// for (int i = 0; i < index ; i++) {
-// indexelem = getNext(indexelem);
-// }
-// return indexelem.getValue();
-// }
-// private Node<T> getNext(Node<T> elem){
-// return elem.getNext();
-// }
+    public T get(int index) throws Exception {
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException("Элемента с таким индектом нет");
+        }
+        Node node = firstElem;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return (T) node.element;
+    }
+
+    class Node<T> {
+        private T element;
+        private Node next;
+        private Node prev;
+
+        Node(T element) {
+            this.element = element;
+            this.prev = lastElem;
+            this.next = null;
+            if (lastElem != null) {
+                lastElem.next = this;
+            }
+            if (firstElem == null) {
+                firstElem = this;
+            }
+            lastElem = this;
+            size += 1;
+        }
+    }
 
 }
