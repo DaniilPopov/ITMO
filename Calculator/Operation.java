@@ -1,9 +1,6 @@
 package Calculator;
 
-public class Operation {
+abstract class Operation {
 
-    protected int execute(int a, int b) {
-
-        return 0;
-    }
+    abstract int execute(int a, int b);
 }

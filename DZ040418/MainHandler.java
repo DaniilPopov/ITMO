@@ -1,9 +1,5 @@
 package DZ040418;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class MainHandler implements mainInterface {
     @Override
     public void read(String path) {
@@ -15,33 +11,31 @@ public class MainHandler implements mainInterface {
 
     }
 
-    public abstract static class Handler {
-        protected String file;
-
-        protected Handler(String file) {
-            this.file = file;
-        }
-
-        public static Handler getInstace(String file) {
-            if (file.endsWith(".json")) {
-                return JsonHandler(String file);
-            } else {
-                return XmlHandler(String file);
-            }
-
-        }
-
-        public static void main(String[] args) throws IOException {
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            String file = reader.readLine();
-
-            MainHandler mh;
-            mh = MainHandler.Handler(String file);
-
-            mh.read(String file);
-            mh.write(String file);
-
-        }
-    }
+//    public abstract static class Handler{
+//        protected String fileName;
+//        protected Handler(String fileName){
+//            this.fileName = fileName;
+//        }
+//
+//        public static Handler  getInstace(String fileName) {
+//            if (fileName.endsWith(".json")) {
+//                return JsonHandler(String fileName);
+//            } else {
+//                return XmlHandler(String fileName);
+//            }
+//        }
+//
+//        public static void main(String[] args) throws IOException {
+//
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//            String fileName = reader.readLine();
+//
+//            MainHandler mh;
+//            mh = MainHandler.Handler(String fileName);
+//
+//            mh.read(String fileName);
+//            mh.write(String fileName);
+//
+//        }
+//    }
 }

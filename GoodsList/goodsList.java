@@ -27,12 +27,13 @@ public class goodsList {
                 System.out.println("Введите данные: ");
                 String data1 = reader.readLine();
                 list.addCard(data1);
-            }
+            } else
             if (data.equals(SHOW)) {
                 list.showCard();
-            }
-            if (data.equals(CLOSE)) {
+            } else if (data.equals(CLOSE)) {
                 System.exit(0);
+            } else {
+                System.out.println("Введите корректную команду");
             }
         }
     }
@@ -68,5 +69,17 @@ public class goodsList {
                 System.out.println(entry1.getKey() + " " + entry1.getValue());
             }
         }
+    }
+
+    public boolean validator(String str) {
+
+        String[] string = str.split(" ");
+        if (string.length != 3) {
+            return false;
+        }
+        if (!(string[0].replace("[a-zA-Zа-яА-Я]", "").isEmpty())) {
+            return false;
+        }
+        return true;
     }
 }
